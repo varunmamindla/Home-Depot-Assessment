@@ -14,6 +14,9 @@
 		D395985020A8CD920024F29F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D395984E20A8CD920024F29F /* LaunchScreen.storyboard */; };
 		D395985B20A8CD920024F29F /* Home_Depot_AssessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395985A20A8CD920024F29F /* Home_Depot_AssessmentTests.swift */; };
 		D395986620A8CD920024F29F /* Home_Depot_AssessmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395986520A8CD920024F29F /* Home_Depot_AssessmentUITests.swift */; };
+		D395987520A8CE270024F29F /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395987320A8CE270024F29F /* GridLayout.swift */; };
+		D395987620A8CE270024F29F /* ListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395987420A8CE270024F29F /* ListLayout.swift */; };
+		D395987A20A8D86E0024F29F /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395987920A8D86E0024F29F /* DetailViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		D395986120A8CD920024F29F /* Home Depot AssessmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Home Depot AssessmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D395986520A8CD920024F29F /* Home_Depot_AssessmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_Depot_AssessmentUITests.swift; sourceTree = "<group>"; };
 		D395986720A8CD920024F29F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D395987320A8CE270024F29F /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridLayout.swift; path = "../../../Downloads/grid_tutorial-switching_layouts/GridLayout/GridLayout/GridLayout.swift"; sourceTree = "<group>"; };
+		D395987420A8CE270024F29F /* ListLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListLayout.swift; path = "../../../Downloads/grid_tutorial-switching_layouts/GridLayout/GridLayout/ListLayout.swift"; sourceTree = "<group>"; };
+		D395987920A8D86E0024F29F /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,15 @@
 		D395984420A8CD900024F29F /* Home Depot Assessment */ = {
 			isa = PBXGroup;
 			children = (
+				D395987320A8CE270024F29F /* GridLayout.swift */,
+				D395987420A8CE270024F29F /* ListLayout.swift */,
 				D395984520A8CD900024F29F /* AppDelegate.swift */,
 				D395984720A8CD900024F29F /* ViewController.swift */,
 				D395984920A8CD900024F29F /* Main.storyboard */,
 				D395984C20A8CD920024F29F /* Assets.xcassets */,
 				D395984E20A8CD920024F29F /* LaunchScreen.storyboard */,
 				D395985120A8CD920024F29F /* Info.plist */,
+				D395987920A8D86E0024F29F /* DetailViewCell.swift */,
 			);
 			path = "Home Depot Assessment";
 			sourceTree = "<group>";
@@ -256,6 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D395987520A8CE270024F29F /* GridLayout.swift in Sources */,
+				D395987620A8CE270024F29F /* ListLayout.swift in Sources */,
+				D395987A20A8D86E0024F29F /* DetailViewCell.swift in Sources */,
 				D395984820A8CD900024F29F /* ViewController.swift in Sources */,
 				D395984620A8CD900024F29F /* AppDelegate.swift in Sources */,
 			);
