@@ -12,7 +12,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var usertxt: UITextField!
-    
+    var pageNo:Int = 1
     var itemsToDisplay = [AnyObject]()
     var gridLayout: GridLayout!
     lazy var listLayout: ListLayout = {
@@ -58,16 +58,30 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y == scrollView.contentSize.height - scrollView.frame.size.height) {
+            pageNo = pageNo + 1
+            getData(user: usertxt.text!, page: pageNo)
+        }
+    }
     
     @IBAction func goBtnClicked(_ sender: Any) {
         let text = usertxt.text
+        pageNo = 1
+        itemsToDisplay.removeAll()
         getData(user: text!)
         
     }
     
-    func getData(user:String) {
-        let path = "https://api.github.com/users/"+user+"/repos?%20page=1&per_page=10"
-        let url = URL(string: path)
+    func getData(user:String, page:Int = 1) {
+        let path = "https://api.github.com/users/"+user+"/repos"
+        var urlComponents = URLComponents(string: path)!
+        urlComponents.queryItems = [
+            URLQueryItem(name: "page", value: String(page)),
+            URLQueryItem(name: "per_page", value: String(10))
+        ]
+        
+        let url = urlComponents.url//URL(string: path)
         let session = URLSession.shared
         let task = session.dataTask(with:url!) { (data, response, error) -> Void in
             guard let content = data else {
@@ -80,7 +94,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 print("Not containing JSON")
                 return
             }
-            self.itemsToDisplay = json
+            self.itemsToDisplay = self.itemsToDisplay + json
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
